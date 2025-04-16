@@ -1,0 +1,17 @@
+{
+  "name": "header-footer-parser",
+  "version": "1.0.0",
+  "type": "module",                       
+  "main": "puppeteer-parser.js",             
+  "scripts": {
+    "start": "node puppeteer-parser.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Extract header and footer from any website using Puppeteer.",
+  "dependencies": {
+    "puppeteer": "^24.6.1"
+  }
+}
