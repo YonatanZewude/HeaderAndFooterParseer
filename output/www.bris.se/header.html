@@ -1,0 +1,155 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="header.css">
+<script src="https://www.google-analytics.com/analytics.js" defer></script>
+<script src="https://www.youtube.com/s/player/8102da6c/www-widgetapi.vflset/www-widgetapi.js" defer></script>
+<script src="https://www.googletagmanager.com/gtm.js?id=GTM-NTM2KZ8" defer></script>
+<script src="https://consent.cookiebot.com/a9c35dac-05e0-4246-8f68-5e8be07bdbed/cc.js?renew=false&referer=www.bris.se&dnt=false&init=false" defer></script>
+<script src="https://consentcdn.cookiebot.com/consentconfig/a9c35dac-05e0-4246-8f68-5e8be07bdbed/bris.se/configuration.js" defer></script>
+<script src="https://consent.cookiebot.com/uc.js" defer></script>
+<script src="https://www.youtube.com/iframe_api" defer></script>
+<script src="https://www.bris.se/bundles/scripts-1" defer></script>
+<script src="https://www.bris.se/bundles/scripts-v2" defer></script>
+</head>
+<div class="header-container container-fluid" id="header-top">
+    <div class="row">
+        <div class="col-12">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="https://www.bris.se/">
+                        <img src="https://www.bris.se/static/images/logo.png" alt="Bris - Barnens rätt i samhället" class="img-fluid">
+                    </a>
+                </div>
+
+
+
+<div class="search-container" id="desktopSearchInput">
+<form action="/" id="searchForm" method="post"><input id="node" name="node" type="hidden" value="">        <i class="bi bi-search" onclick="$(this).closest(&quot;form&quot;).submit();"></i>
+        <div class="spinner-border text-secondary d-none" role="status"></div>
+        <input type="text" placeholder="Hur kan vi hjälpa dig?" class="form-control">
+        <i class="bi bi-x-circle"></i>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Ip1qLRj62pLu33uNHAoUp2AIBCKOMsnsKDp7eKCYBKIlAegQO884KBWgazad9adigrTeUqGq-zVbmHlsMkGd6XJrgcowe9n8VzjFg6u9XnDDQfKvfyKB6KAICu8qgnrZRniBmNZjs9vfKMcPH5w2vU"></form>    <ul class="search-result d-none">
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var partialFormId = '#desktopSearchInput';
+
+        $('.bi-x-circle').on("click", function (event) {
+            clearSearchResult();
+        });
+
+        $(partialFormId + ' #searchForm').submit(function(event) {
+            event.preventDefault();
+            showSearch(event);
+            var query = $('#desktopSearchInput input[type="text"]').val();
+
+            toggleSearchLoadingIndicator();
+            copySearchQueryToAllSearchInputs(query);
+            $('.search-result').each(function () {
+                $(this).empty();
+            });
+            $.ajax({
+                url: '/sok/' + 'light',
+                method: 'POST',
+                contentType: 'application/x-www-form-urlencoded',
+                data: { q: query },
+                success: function (response) {
+                    $(".overlay").removeClass("d-none");
+                    if (response && response.hits && response.hits.length) {
+                        var groupedHits = groupBy(response.hits, 'category');
+
+                        for (var category in groupedHits) {
+                            $('.search-result').each(function () {
+                                let searchResultElem = this;
+                                $(searchResultElem).append($('<li class="category-header"></li>').text(category));
+
+                                groupedHits[category].forEach(function (hit) {
+                                    var highlightedTitle = highlightMatch(hit.title, query);
+                                    var $listItem = $('<li class="search-hit"></li>');
+                                    var $link = $('<a></a>').attr('href', hit.url).html("<span>" + highlightedTitle + "</span>");
+
+                                    if (hit.thumbnail) {
+                                        var $image = $('<img />').attr('src', hit.thumbnail).on('error', function () {
+                                            // Handle image load error, e.g., replace with a placeholder image
+                                            $(this).attr('src', 'path/to/placeholder-image.jpg');
+                                        });
+                                        $link.append($image);
+                                    }
+
+                                    $listItem.append($link);
+                                    $(searchResultElem).append($listItem);
+                                });
+                            });
+                        }
+                    }
+                    else {
+                        $('.search-result').each(function () {
+                            let searchResultElem = this;
+                            var $listItem = $('<li class="search-hit"></li>');
+                            var $link = $('<a></a>').html("<span>Inga sökträffar</span>");
+                            $listItem.append($link);
+                            $(searchResultElem).append($listItem);
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('.search-result').each(function () {
+                        let searchResultElem = this;
+                        var $listItem = $('<li class="search-hit"></li>');
+                        var $link = $('<a></a>').html("<span>Inga sökträffar</span>");
+                        $listItem.append($link);
+                        $(searchResultElem).append($listItem);
+                    });
+                },
+                complete: function () {
+                    toggleSearchLoadingIndicator();
+                }
+            });
+
+        });
+    });
+
+    function submitSearchForm() {
+        $('#desktopSearchInput').find('form').submit();
+    }
+
+    function highlightMatch(text, query) {
+        // Create a regex that looks for words that contain the query
+        var re = new RegExp("\\b\\w*" + escapeRegExp(query) + "\\w*\\b", "gi");
+        return text.replace(re, '<strong>$&</strong>');
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapes special characters for regex
+    }
+
+    function groupBy(array, property) {
+        return array.reduce(function (accumulator, item) {
+            var key = item[property];
+            if (!accumulator[key]) {
+                accumulator[key] = [];
+            }
+            accumulator[key].push(item);
+            return accumulator;
+        }, {});
+    }
+
+</script>
+
+
+
+
+                <div class="actions">
+                    <a href="https://barn.bris.se/" class="btn btn-secondary login-button -style-0">Logga in</a>
+                    <span id="desktopMenuToggleButton" class="menu-button">
+                        <i class="bi bi-list menu-opened"></i>
+                        <i class="bi bi-x d-none menu-closed -style-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
