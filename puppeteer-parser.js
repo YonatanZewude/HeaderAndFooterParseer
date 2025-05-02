@@ -95,14 +95,12 @@ async function extractSection(page, selector, name, baseUrl, outputPath) {
     return { cssParts, externalCssLinks, externalScripts, metaViewport };
   }, baseUrl.origin);
 
-  // Hämta inline <script>-block
   const inlineScripts = await page.evaluate(() => {
     return Array.from(document.querySelectorAll("script:not([src])"))
       .map(script => script.textContent.trim())
       .filter(code => code.length > 0);
   });
 
-  // Hämta extern CSS
   let externalCssContent = "";
   for (const link of externalCssLinks) {
     try {
@@ -118,7 +116,6 @@ async function extractSection(page, selector, name, baseUrl, outputPath) {
 
   const finalCss = `${externalCssContent}\n${cssParts.join("\n")}\n\n/* Inline styles */\n${inlineCss}`;
 
-  // Skapa scripts-mapp
   const scriptsPath = path.join(outputPath, 'scripts');
   fs.mkdirSync(scriptsPath, { recursive: true });
 
@@ -141,7 +138,6 @@ async function extractSection(page, selector, name, baseUrl, outputPath) {
     }
   }
 
-  // Spara inline-script till egen JS-fil
   let inlineScriptPath = null;
   if (inlineScripts.length > 0) {
     const inlineScriptCode = inlineScripts.join("\n\n");
@@ -150,7 +146,6 @@ async function extractSection(page, selector, name, baseUrl, outputPath) {
     fs.writeFileSync(path.join(scriptsPath, inlineScriptName), inlineScriptCode, 'utf-8');
   }
 
-  // Skapa head
   let headContent = '';
   headContent += metaViewport || `<meta name="viewport" content="width=device-width, initial-scale=1">\n`;
   headContent += `<link rel="stylesheet" href="${name}.css">\n`;
@@ -161,20 +156,22 @@ async function extractSection(page, selector, name, baseUrl, outputPath) {
     headContent += `<script src="${inlineScriptPath}" defer></script>\n`;
   }
 
-  let htmlWithCss = html;
-  if (htmlWithCss.includes("<head")) {
-    htmlWithCss = htmlWithCss.replace(
-      /<head[^>]*>/i,
-      match => `${match}\n${headContent}`
-    );
-  } else {
-    htmlWithCss = `<head>\n${headContent}</head>\n` + htmlWithCss;
-  }
+  const fullHtmlPage = `<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>${name}</title>
+  ${headContent}
+</head>
+<body>
+  ${html}
+</body>
+</html>`;
 
-  fs.writeFileSync(path.join(outputPath, `${name}.html`), htmlWithCss, "utf-8");
+  fs.writeFileSync(path.join(outputPath, `${name}.html`), fullHtmlPage, "utf-8");
   fs.writeFileSync(path.join(outputPath, `${name}.css`), finalCss, "utf-8");
 
-  console.log(`✅ Sparat: ${name}.html & ${name}.css`);
+  console.log(`✅ Sparat: ${name}.html, ${name}.css + JS-filer`);
 }
 
 async function parsePage(url, headerSelArg, footerSelArg) {

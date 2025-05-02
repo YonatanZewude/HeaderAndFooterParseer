@@ -179,7 +179,7 @@ var _etmc = {
     if (this.first_party) {
       collect_url = this.first_party;
     } else {
-      collect_url = 'tau.collect.igodigital.com';
+      collect_url = 'nova.collect.igodigital.com';
     }
 
     var image_src = protocolPrepend + '://' + collect_url + '/c2/' + this.org_id + '/' + endpoint +'?payload=' + collectData;

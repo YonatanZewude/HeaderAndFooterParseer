@@ -316,44 +316,44 @@ $(document).ready(function () {
             ga('set', 'anonymizeIp', true);
 
 $(document).ready(function () {
-        var carousel = new bootstrap.Carousel('#carousel_d0d120fb693d4888bff8f7692782dc6b', {
+        var carousel = new bootstrap.Carousel('#carousel_da70c4f773a544448afc7c2490693e01', {
             touch: true,
             pause: false,
             interval: 30000,
         });
 
         window.carousels = window.carousels || {};
-        window.carousels['carousel_d0d120fb693d4888bff8f7692782dc6b'] = carousel;
+        window.carousels['carousel_da70c4f773a544448afc7c2490693e01'] = carousel;
     });
 
     $(document).ready(function() {
 
-        $('#carousel_d0d120fb693d4888bff8f7692782dc6b').on('slid.bs.carousel', function (e) {
+        $('#carousel_da70c4f773a544448afc7c2490693e01').on('slid.bs.carousel', function (e) {
         var activeIndex = $(e.relatedTarget).index();
 
-        $('#carousel_d0d120fb693d4888bff8f7692782dc6b' + ' .bris-carousel-indicators a').removeClass('active')
+        $('#carousel_da70c4f773a544448afc7c2490693e01' + ' .bris-carousel-indicators a').removeClass('active')
             .eq(activeIndex).addClass('active');
         });
 
-        $('#carousel_d0d120fb693d4888bff8f7692782dc6b' + ' .bris-carousel-indicators a').on('click', function () {
+        $('#carousel_da70c4f773a544448afc7c2490693e01' + ' .bris-carousel-indicators a').on('click', function () {
             // Remove active class from all indicators
-            $('#carousel_d0d120fb693d4888bff8f7692782dc6b' + ' .bris-carousel-indicators a').removeClass('active');
+            $('#carousel_da70c4f773a544448afc7c2490693e01' + ' .bris-carousel-indicators a').removeClass('active');
             // Add active class to the clicked indicator
             $(this).addClass('active');
         });
     });
 
 $(document).ready(function () {
-            $('#carousel_d0d120fb693d4888bff8f7692782dc6b' + ' .carousel-play-toggle').click(function () {
+            $('#carousel_da70c4f773a544448afc7c2490693e01' + ' .carousel-play-toggle').click(function () {
                 if ($('#pauseIcon').is(':visible')) {
                     $('#pauseIcon').addClass('d-none');
                     $('#playIcon').removeClass('d-none');
-                    window.carousels['carousel_d0d120fb693d4888bff8f7692782dc6b'].pause();
+                    window.carousels['carousel_da70c4f773a544448afc7c2490693e01'].pause();
                 } else {
-                    $('#carousel_d0d120fb693d4888bff8f7692782dc6b').carousel('cycle');
+                    $('#carousel_da70c4f773a544448afc7c2490693e01').carousel('cycle');
                     $('#pauseIcon').removeClass('d-none');
                     $('#playIcon').addClass('d-none');
-                    window.carousels['carousel_d0d120fb693d4888bff8f7692782dc6b']._config['interval'] = 30000;
+                    window.carousels['carousel_da70c4f773a544448afc7c2490693e01']._config['interval'] = 30000;
 
                 }
             });
@@ -509,7 +509,7 @@ var voteBlockIdSelector = '#17016';
 $(document).ready(function () {
 
         function setMinWidthForWrapper() {
-            $("#ca97ea71-8ca1-4fec-8d88-d2ff300addef" + ' .sliding-image-wrapper > div').each(function () {
+            $("#ab60a7af-aecd-428d-9295-2487b420d0f8" + ' .sliding-image-wrapper > div').each(function () {
                 var totalWidth = 0;
                 $(this).find('.sliding-image').each(function () {
                     totalWidth += $(this).outerWidth(true); // true includes margin
@@ -529,7 +529,7 @@ $(document).ready(function () {
 
         const $imageWrappers = $('.sliding-image-wrapper > div');
 
-        $("#ca97ea71-8ca1-4fec-8d88-d2ff300addef").click(function () {
+        $("#ab60a7af-aecd-428d-9295-2487b420d0f8").click(function () {
             $($imageWrappers).toggleClass("animation-paused");
             $(this).find('.bi-pause-circle').toggleClass("d-none");
             $(this).find('.bi-play-circle').toggleClass("d-none");
@@ -555,7 +555,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#b3b99d9a-a400-41f8-9f43-cffe06861bae";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#a07f93b0-fb3a-4147-8a8f-cbf635c0b667";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = 'WHITE'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -581,7 +581,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#1c1d19d2-bc6d-499f-bcf8-9b5800e32641";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#45df221d-fe7d-4e2f-bed7-f6a2c8328056";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -607,7 +607,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#398f12cc-f250-48d0-baff-5015a7a51842";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#af35a49e-905b-480f-9731-79d9de725795";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -633,7 +633,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#e3f6f822-1d01-4b8d-81df-61cb3fe8f1c3";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#49e9d863-e9a1-426e-a720-3dd380aecc89";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -659,7 +659,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#7e36aab3-978d-4108-8514-3841992f324f";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#e4e9790e-55ed-4ed2-bef5-5063bf75a516";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -685,7 +685,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#f226e75a-a406-46bc-af95-af95efe93788";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#1afc5399-365d-4135-abe5-4236d380f1a4";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -711,7 +711,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#848a64fa-c7ac-477d-8255-8e53052acc6b";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#804016bb-d86b-40bc-8915-1f193b0c662c";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#007565'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -737,7 +737,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#c3727200-0937-4310-a8e4-79ca2b4e2088";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#76994cd7-7c04-4cc3-adbe-a65bc744ddb3";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -763,7 +763,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#2df92e6a-0c5d-43a7-8f21-2d5a237a754b";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#5e482c9b-dc1e-4de6-ad86-9e6ff9e0d1a7";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -773,7 +773,7 @@ $(document).ready(function() {
 
 $(document).ready(function () {
 
-        var paginator = new SideScrollPaginator("#block_ca66b71c7e69496898dd647a6e7b7f6d");
+        var paginator = new SideScrollPaginator("#block_49db4cec3ac74f8da0ee4ec27c0dc6bb");
     });
 
     function giveAllCTACardsTheSameHeight(sidescrollId) {
@@ -795,7 +795,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
         function setMinWidthForWrapper() {
-            $("#523a37c3-1ae9-486d-bb08-6263f758a7df" + ' .sliding-image-wrapper > div').each(function () {
+            $("#90a97ebe-0a00-43c6-943d-efde9bcba1e4" + ' .sliding-image-wrapper > div').each(function () {
                 var totalWidth = 0;
                 $(this).find('.sliding-image').each(function () {
                     totalWidth += $(this).outerWidth(true); // true includes margin
@@ -815,7 +815,7 @@ $(document).ready(function () {
 
         const $imageWrappers = $('.sliding-image-wrapper > div');
 
-        $("#523a37c3-1ae9-486d-bb08-6263f758a7df").click(function () {
+        $("#90a97ebe-0a00-43c6-943d-efde9bcba1e4").click(function () {
             $($imageWrappers).toggleClass("animation-paused");
             $(this).find('.bi-pause-circle').toggleClass("d-none");
             $(this).find('.bi-play-circle').toggleClass("d-none");
@@ -841,7 +841,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#55bf51ce-e73e-4e99-a93b-ad72354ff388";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#48c4720b-b9ba-495f-8b3b-17bbb5268a1e";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -867,7 +867,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#c4e38c7f-3c5c-4ad0-b1ab-74974a411b3b";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#09f067c7-bff6-4873-bd60-92a0c7e6dbea";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -893,7 +893,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#35ae81f7-a9d7-40e3-90e4-8d4b2036b846";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#f5409432-73d9-4563-98ce-5695f35986b9";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -919,7 +919,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#18daae1c-b6be-4d0b-bd26-3a5729507f25";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#5c104910-c59c-48c9-97ae-802c3e812db3";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -945,7 +945,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#c7a1b29d-57d1-49be-b874-6528d204d641";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#785fb8fa-6de4-4078-83a5-aff776cb491b";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#222222'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -971,7 +971,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#d5d38510-d45a-4228-8b3d-874f76c2ecc8";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#a5d84654-1a7d-4a07-9de8-4de047188f1f";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#FFFFFF'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -981,7 +981,7 @@ $(document).ready(function() {
 
 $(document).ready(function () {
 
-        var paginator = new SideScrollPaginator("#block_aea6d4c650684578b95409fa434a4723");
+        var paginator = new SideScrollPaginator("#block_8d9835b8d7034be8a7e08d522e868f36");
     });
 
     function giveAllCTACardsTheSameHeight(sidescrollId) {
@@ -1143,7 +1143,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#fd5b8ad2-21c5-47e2-90fc-0fab0ad7a32d";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#98fb3661-0c11-4e06-abd3-f03991e862d7";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#222222'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -1154,7 +1154,7 @@ $(document).ready(function() {
 $(document).ready(function () {
 
         function setMinWidthForWrapper() {
-            $("#65e71763-4e68-4d21-842c-cb882da03777" + ' .sliding-image-wrapper > div').each(function () {
+            $("#7abc79d1-327b-49cd-8a4d-19ad0aaf5395" + ' .sliding-image-wrapper > div').each(function () {
                 var totalWidth = 0;
                 $(this).find('.sliding-image').each(function () {
                     totalWidth += $(this).outerWidth(true); // true includes margin
@@ -1174,7 +1174,7 @@ $(document).ready(function () {
 
         const $imageWrappers = $('.sliding-image-wrapper > div');
 
-        $("#65e71763-4e68-4d21-842c-cb882da03777").click(function () {
+        $("#7abc79d1-327b-49cd-8a4d-19ad0aaf5395").click(function () {
             $($imageWrappers).toggleClass("animation-paused");
             $(this).find('.bi-pause-circle').toggleClass("d-none");
             $(this).find('.bi-play-circle').toggleClass("d-none");
@@ -1200,7 +1200,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#d737109d-5a65-4cf4-b665-f9b71268ab86";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#9f7b9a28-6aeb-4f43-8b73-4a9e3619a1b3";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#222222'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -1226,7 +1226,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#d8fac3b4-9a09-4ac9-bf46-79e577f04774";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#5b0524f0-08c4-48be-a131-3c89dd41c299";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = 'WHITE'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -1252,7 +1252,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#3860a1c9-ac03-46d9-9fd1-2e6e8dc1986b";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#3dc0635b-8b27-4446-89aa-3f36423ed0bd";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = '#222222'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
@@ -1278,7 +1278,7 @@ function handleCTAClick(event, buttonLink, wholeCTAClickable) {
     }
 
 $(document).ready(function() {
-            var uniqueId = "#86451308-13f0-494c-883b-81d880534e64";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
+            var uniqueId = "#633b65a4-a82a-4d17-9560-3f56e06c88c6";  // This uses Razor syntax to inject a unique ID, make sure it's correctly set in your Razor code
             var linkColor = 'WHITE'; // This also uses Razor syntax to inject a color value
 
             $(uniqueId + ' .cta-description a').each(function() {
